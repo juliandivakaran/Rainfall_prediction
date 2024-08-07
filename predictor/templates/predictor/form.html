@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predict Rainfall Form</title>
+</head>
+<body>
+    <h2>Predict Rainfall</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="year">Year:</label>
+        <input type="text" id="year" name="year"><br><br>
+        
+        <!-- Include other input fields for jan, feb, mar, ..., dec -->
+        <label for="jan">January:</label>
+        <input type="text" id="jan" name="jan"><br><br>
+        
+        <label for="feb">February:</label>
+        <input type="text" id="feb" name="feb"><br><br>
+        
+        <!-- Repeat for other months -->
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if error_message %}
+    <p><strong>Error:</strong> {{ error_message }}</p>
+    {% endif %}
+</body>
+</html>
